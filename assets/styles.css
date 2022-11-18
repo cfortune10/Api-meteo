@@ -30,16 +30,20 @@ h1 {
 
 #city {
     background-color: rgba(43, 128, 145, 0.75);
+   
 }
 
  #temp {
     background-color: rgba(43, 78, 101, 0.75);
+  
  }
 
  #humidity {
     background-color: rgba(52, 152, 219, 0.75);
+    
  }
 
  #wind {
     background-color: rgba(143, 146, 154, 0.75);
+    
  }
