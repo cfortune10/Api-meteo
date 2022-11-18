@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-12 col-sm-6 my-3">
-                <form>
+                <form id="form">
                     <div class="form-group">
                         <input type="text" class="form-control" id="inputCity">
                     </div>
@@ -26,40 +26,4 @@
         </div>
     </div>
 
-<script>
-
-const APIKEY = `93d9891b68484cb9a8d381200d006d44`
-
-let apicall = function(city) {
-    let url = `https://https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&lang=fr&appid=${APIKEY}`
-    ;
-
-    fetch(url)
-        .then((response) => 
-        response.json().then((data) => {
-            console.log(data);
-            document.querySelector(`#city`).innerHTML = data.name;
-            document.querySelector(`#temp`).innerHTML =
-                "<i class=`fas fa-thermometer-half`></i>" + data.main.temp + `°`;
-            document.querySelector(`#humidity`).innerHTML =
-                "<i class=`fas fa-tint`></i>" + data.main.humidity + `%`;
-            document.querySelector(`#wind`).innerHTML =
-                "<i class=`fas fa-wind`></i>" + data.main.speed + `km/h`;
-        })
-    )
-    .catch((err) => console.log(`Erreur : ` + err));
-};
-
-/*Ecouteur d'evenement sur la soumission du formulaire*/
-document.querySelector(`form`).addEventListener(`submit`, function (e) {
-    e.preventDefault();
-    let ville = document.querySelector(`#inputCity`).value;
-
-    apiCall(ville);
-
-})
-
-
-</script>
-
-
+<script src="/public/js/app.js"></script> 
