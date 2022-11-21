@@ -1,7 +1,8 @@
 //on appele express
+const { response } = require('express');
 const express = require('express');
 const { engine } = require('express-handlebars');
-
+const path = require('path')
 //inistialisation d'express
 const app = express();
 //on declare le port
@@ -10,6 +11,8 @@ const port = 3000;
 app.engine('hbs', engine({defaultlayout:"main", extname:"hbs"}));
 app.set('view engine', 'hbs');
 app.set('views', './views');
+
+app.use('/public', express.static(path.join(__dirname, 'assets')))
 
 //on créer un callback
 app.get('/', (request, response) => {
@@ -29,3 +32,5 @@ app.get('/encore-une-autre-page', (request, response) => {
 app.listen(port, () => {
     console.log(`le serveur ecoute à l'adresse http://localhost:${port}`);
 })
+
+
