@@ -1,8 +1,36 @@
 <h1>
-    deuxieme page
+    METEO
 </h1>
+<!-- Création d'un formulaire pour saisir un nom de ville avec un bouton pour soummetre le formulaire -->
+<div class="`container">
+    <div class="row justify-content-center">
+        <div class="col-12 my-3">
+            <form id="searchForm">
+                <div class="form-group">
+                    <label for="nameVille">Veuillez entrer un nom de ville :</label>
+                    <small id="unknownName"></small>
+                    <input type="text" class="form-control" name="nameVille" id="nameVille" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-secondary btn-block">
+                        Rechercher
+                    </button>
+                </div>
+            </form>
+        </div>
+        <!-- Création d'une box avec 4 carrés -->
+        <div class="col-12 d-flex justify-content-center my-3">
+            <div class="box-container">
+                <div id="city" class="box"></div>
+                <div id="temp" class="box"></div>
+                <div id="humidity" class="box"></div>
+                <div id="wind" class="box"></div>
+            </div>
+        </div>
+    </div>
+</div>  
 
-<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas ipsam praesentium, exercitationem dolor ex
-    deleniti provident sint ut, dolores repellat facilis optio fugit veritatis odit. Magni eaque placeat voluptatibus
-    maxime.
-</p>
+<script src="/public/js/app.js"></script> 
+
+
+
